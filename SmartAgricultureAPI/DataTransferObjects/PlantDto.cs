@@ -1,12 +1,13 @@
-﻿namespace SmartAgricultureAPI.Models
+﻿using SmartAgricultureAPI.Models;
+
+namespace SmartAgricultureAPI.DataTransferObjects
 {
-    public class Plant
+    public class PlantDto
     {
         public int PlantId { get; set; } // Primary Key
         public string PlantName { get; set; } // Bitki Adı
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow; // Kaydedilme Tarihi
 
-        // Navigation Property
-        public ICollection<PlantMeasurement>? Measurements { get; set; }
+        public ICollection<PlantMeasurementDto>? Measurements { get; set; }
     }
 }

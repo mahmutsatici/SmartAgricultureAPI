@@ -1,11 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using SmartAgricultureAPI.Data;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
 
 builder.Services.AddDbContext<AppDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddAutoMapper(typeof(Program));
 // Add services to the container.
 
 builder.Services.AddControllers();

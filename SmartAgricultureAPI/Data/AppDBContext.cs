@@ -13,14 +13,7 @@ namespace SmartAgricultureAPI.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-            // Plant - PlantMeasurement ilişkisi
-            modelBuilder.Entity<Plant>()
-                .HasMany(p => p.Measurements)
-                .WithOne(m => m.Plant)
-                .HasForeignKey(m => m.PlantId)
-                .OnDelete(DeleteBehavior.Cascade);
+            // Özel ilişkiler veya kurallar burada tanımlanabilir.
         }
     }
 }

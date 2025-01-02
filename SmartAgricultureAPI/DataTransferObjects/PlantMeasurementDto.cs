@@ -1,6 +1,6 @@
-﻿namespace SmartAgricultureAPI.Models
+﻿namespace SmartAgricultureAPI.DataTransferObjects
 {
-    public class PlantMeasurement
+    public class PlantMeasurementDto
     {
         public int PlantMeasurementId { get; set; } // Primary Key
         public int PlantId { get; set; } // Foreign Key (Plant Tablosu ile ilişki)
@@ -12,8 +12,5 @@
         public double AirHumidity { get; set; } // Hava Nem Oranı (%)
         public double LightLevel { get; set; } // Işık Seviyesi (Lux)
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow; // Ölçüm Zamanı
-
-        // Navigation Property
-        public Plant? Plant { get; set; }
     }
 }
